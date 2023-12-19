@@ -83,6 +83,7 @@ extern uint32 _e_bss;
 typedef void (*PF_Handler)(void);
 
 __attribute__((section(".isr_vector"), used)) PF_Handler Vector_Table[] = {
+  (PF_Handler) &_e_stack;
   resetHandler,
   NMI_Handler,
   HardFault_Handler,
